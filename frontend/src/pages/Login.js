@@ -17,10 +17,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post('/login', { username, password });
+      const response = await api.post('http://localhost:5001/api/login', { username, password });
       localStorage.setItem('token', response.data.token);
       navigate('/tasks');
-    } catch (error) {
+    } catch (error) {   
       console.error('Error logging in', error);
     }
   };

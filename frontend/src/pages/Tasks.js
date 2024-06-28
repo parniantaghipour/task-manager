@@ -71,7 +71,7 @@ function Tasks() {
     const fetchTasks = async () => {
       try {
         console.log("response")
-        const response = await api.get('/tasks');
+        const response = await api.get('/api/tasks');
         console.log("response", response.data)
         setTasks(response.data);
       } catch (error) {

@@ -78,6 +78,7 @@ router.post('/tasks', auth, async (req, res) => {
 // Get tasks
 router.get('/tasks', auth, async (req, res) => {
   try {
+    console.log("user id", req.user._id)
     const tasks = await Task.find({ userId: req.user._id });
     res.send(tasks);
   } catch (e) {

@@ -20,7 +20,7 @@ const Register = () => {
       console.error('Error registering', error);
     }
   };
-
+ 
   return (
     <form onSubmit={handleSubmit}>
       <h2>Register</h2>

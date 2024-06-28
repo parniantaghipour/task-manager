@@ -5,13 +5,17 @@ const { User } = require('./models');
 const auth = async (req, res, next) => {
   try {
     const authHeader = req.header('Authorization');
+    console.log("middlewear",authHeader)
+
     if (!authHeader) {
       throw new Error('No authorization header found');
     }
     const token = authHeader.replace('Bearer ', '');
-    const decoded = jwt.verify(token, 'your_jwt_secret');
-    const user = await User.findOne({ _id: decoded._id, 'tokens.token': token });
-
+    console.log("middlewear",token)
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    console.log("decoded",decoded.id)
+    const user = await User.findOne({ _id: decoded.id });
+    console.log(user)
     if (!user) {
       throw new Error('User not found');
     }
