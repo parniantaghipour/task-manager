@@ -1,11 +1,11 @@
-import React from 'react';
-
 const Task = ({ task }) => {
   return (
-    <div>
-      <h3>{task.title}</h3>
-      <p>{task.description}</p>
-      <p>{task.completed ? 'Completed' : 'Incomplete'}</p>
+    <div className="p-6 bg-yellow-100 border border-yellow-500 rounded-lg shadow-sm">
+      <h3 className="text-xl font-bold text-orange-800">{task.title}</h3>
+      <p className="text-orange-600">{task.description}</p>
+      <p className={`text-sm ${task.completed ? 'text-green-500' : 'text-red-500'}`}>
+        {task.completed ? 'Completed' : 'Not completed'}
+      </p>
     </div>
   );
 };
