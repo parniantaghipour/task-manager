@@ -10,7 +10,7 @@ const auth = async (req, res, next) => {
     if (!authHeader) {
       throw new Error('No authorization header found');
     }
-    const token = authHeader.replace('Bearer ', '');
+    const token = authHeader?.replace('Bearer ', '');
     console.log("middlewear",token)
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     console.log("decoded",decoded.id)

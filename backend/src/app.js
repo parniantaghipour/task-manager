@@ -7,9 +7,13 @@ const app = express();
 
 const PORT = 5001;
 dotenv.config();
-
 // Use CORS middleware
-app.use(cors());
+const corsOptions = {
+  origin: 'http://localhost:3001',
+  optionsSuccessStatus: 200,
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use('/api', routes);

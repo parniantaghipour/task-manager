@@ -7,11 +7,12 @@ const router = express.Router();
 
 router.post('/register', async (req, res) => {
   try {
-    console.log("hereeee")
     const { username, password } = req.body;
     const user = new User({ username, password });
-    await user.save();
+    console.log("passed")
 
+    await user.save();
+    console.log("passed")
     // Generate a token
     const token = jwt.sign({ user: { id: user._id } }, process.env.JWT_SECRET, {
       expiresIn: '1h',

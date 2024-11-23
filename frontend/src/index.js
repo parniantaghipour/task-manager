@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './App.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createRoot } from 'react-dom/client';
+import './styles.css'; // Import your custom styles
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
